@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html,
+  body,
+  #root {
+    @apply min-h-full;
+  }
+
+  body {
+    @apply m-0 font-sans text-slate-900;
+    background: #ffffff;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  button,
+  input,
+  select {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .circle-hover {
+    transition: transform 3s ease-out;
+  }
+
+  .group:hover .circle-hover {
+    transform: scale(20);
+  }
+
+  .group:not(:hover) .circle-hover {
+    transition: transform 0.5s ease-in;
+    transform: scale(1);
+  }
+}
